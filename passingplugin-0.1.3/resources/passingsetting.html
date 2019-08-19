@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>通过率设置页面</title>
+	</head>
+	<body>
+		<div id="passingratesettings">
+			<b>-------------------------通过率插件分数设置---------------------</b>
+			<br />
+			通过率总分设置：<input id="totalscore" type="number" name="totalscore" value="100" min="10" max="100" required="true" style="width:5%;"/>
+			<br />
+			<b>-------------------------比例设置（省略百分号）和比例对应应扣分数设置</b>
+			<br />
+			失败率：<input id="failurerate" type="number" name="failurerate" value="5" min="1" max="100" required="true" style="width:5%;"/>
+			失败率对应所扣分数：<input id="failuredeductionscore" type="number" name="failuredeductionscore" value="10" min="1" max="100" required="true" style="width:5%;" />
+			<br />
+			错误率：<input id="errorrate" type="number" name="errorrate" value="5" min="1" max="100" required="true" style="width:5%;"/>
+			错误率对应所扣分数：<input id="errordeductionscore" type="number" name="errordeductionscore" value="10" min="1" max="100" required="true" style="width: 5%;"/>
+		</div>
+	</body>
+</html>

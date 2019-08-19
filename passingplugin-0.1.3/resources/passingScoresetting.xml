@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<score>
+    <totalscore>100</totalscore>
+    <failurerate>5</failurerate>
+    <failuredeductionscore>10</failuredeductionscore>
+    <errorrate>5</errorrate>
+    <errordeductionscore>10</errordeductionscore>
+</score>
