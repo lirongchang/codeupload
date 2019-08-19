@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--文件资源的引用-->
+    <property resource="application.properties"/>
+    <!-- 默认输出文件 -->
+    <appender name="DEFAULT-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.home}/default/common-default.log.%d{yyyyMMdd}</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder charset="UTF-8">
+            <pattern>%d [%t] %-5p %c{2} [%X{traceRootId}] - [%m]%n</pattern>
+        </encoder>
+    </appender>
+    <!-- 默认错误文件 -->
+    <appender name="ERROR-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.home}/error/common-error.log.%d{yyyyMMdd}</fileNamePattern>
+        </rollingPolicy>
+        <encoder charset="UTF-8">
+            <pattern>%d [%t] %-5p %c{2} [%X{traceRootId}] - [%m]%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+    </appender>
+    
+    <!-- 屏蔽logger-start -->
+    <logger name="org.apache" level="WARN"/>
+    <!-- 屏蔽jdk日志 -->
+    <logger name="java" level="WARN"/>
+    <!-- 屏蔽logger-end-->
+    <root level="${log.root.level}">
+        <appender-ref ref="DEFAULT-APPENDER"></appender-ref>
+        <appender-ref ref="ERROR-APPENDER"></appender-ref>
+    </root>
+</configuration> 

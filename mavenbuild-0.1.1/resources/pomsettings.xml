@@ -1,0 +1,20 @@
+<settings>
+	<dependencies>
+		<dependency>java</dependency>
+		<dependency>junit</dependency>
+		<dependency>jacoco</dependency>
+		<dependency>checkstyle</dependency>
+		<dependency>maven</dependency>
+		<!-- <dependency>moji</dependency>
+		<dependency>jfreechart</dependency> -->
+	</dependencies>
+	<plugins>
+		<!-- <plugin>maven-compiler-plugin</plugin> -->
+		<plugin>maven-surefire-plugin</plugin>
+		<plugin>jacoco-maven-plugin</plugin>
+		<plugin>jacoco-maven-plugin</plugin>
+		<plugin>maven-checkstyle-plugin</plugin>
+		<!-- <plugin>maven-dependency-plugin</plugin>
+		<plugin>wagon-maven-plugin</plugin> -->
+	</plugins>
+</settings>
