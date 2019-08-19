@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>评分分析插件分数设置</title>
+	</head>
+	<body>
+		<div>
+		<b>---------------------评分分析总分设置-----------------------</b>
+			<br />
+			总分设置：<input id="totalscore" type="number" name="totalscore" value="100" min="10" max="100" required="true" style="width:5%;"/>
+			<br />
+			<b>-------------------各检查项分数占比设置（省略百分号）--------------------</b>
+			<br />
+			静态代码检查分数占比：<input id="codecheckscorerate" type="number" name="codecheckscorerate" value="30" min="10" max="50" required="true" style="width: 5%;"/>
+			<br />
+			通过率检查分数占比：<input id="passingcheckscorerate" type="number" name="passingcheckscorerate" value="40" min="10" max="50" required="true" style="width: 5%;" />
+			<br />
+			覆盖率检查分数占比：<input id="coveragecheckscorerate" type="number" name="coveragecheckscorerate" value="20" min="10" max="50" required="true" style="width: 5%;" />
+			<br />
+			<!-- 代码查重分数占比：<input id="codeduplicatecheckscorerate" type="number" name="codeduplicatecheckscorerate" value="10" min="1" max="50" required="true" style="width: 5%;"/> -->
+			<!-- <br /> -->
+		</div>
+	</body>
+</html>

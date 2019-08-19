@@ -1,0 +1,149 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.scoringanalysis</groupId>
+  <artifactId>scoringanalysis</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>scoringanalysis</name>
+  
+  <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<!-- java版本号 -->
+		<java.version>1.8</java.version>
+		<!-- junit版本号 -->
+		<junit.version>4.12</junit.version>
+		<!-- maven版本 -->
+        <maven.version>3.8.0</maven.version>
+        <!-- 日志管理 -->
+        <slf4j.version>1.7.25</slf4j.version>
+		<logback.version>1.2.3</logback.version>
+		<!-- xml文件处理 -->
+		<dom4j.version>1.6.1</dom4j.version>
+		<!-- 生成api文件 -->
+		<maven.javadoc.version>2.10.3</maven.javadoc.version>
+		<!-- jsoup -->
+		<jsoup.version>1.11.2</jsoup.version>
+		<!-- json版本 -->
+		<json.version>20180130</json.version>
+		<jackjson.version>2.9.8</jackjson.version>
+		<jdom.version>1.0</jdom.version>
+		<commons.beanutils.version>1.9.3</commons.beanutils.version>
+		<!-- jfreechart -->
+		<jfreechart.version>1.5.0</jfreechart.version>
+		<!-- dynamicreports -->
+		<dynamicreports.version>6.0.0</dynamicreports.version>
+	</properties>
+	
+	<dependencies>
+		<!--单元测试依赖 -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- logback start -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+		<!-- logback end -->
+		<!-- xml文件处理 -->
+		<dependency>
+		    <groupId>dom4j</groupId>
+		    <artifactId>dom4j</artifactId>
+		    <version>${dom4j.version}</version>
+		</dependency>
+		<!-- html文件解析相关 -->
+		<dependency>
+		    <groupId>org.jsoup</groupId>
+		    <artifactId>jsoup</artifactId>
+		    <version>${jsoup.version}</version>
+		</dependency>
+		<!-- json数据处理相关 -->
+		<dependency>
+		    <groupId>org.json</groupId>
+		    <artifactId>json</artifactId>
+		    <version>${json.version}</version>
+ 		</dependency>
+		<!-- jackjson -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>${jackjson.version}</version>
+		</dependency>
+		<dependency>
+		  <groupId>com.fasterxml.jackson.core</groupId>
+		   <artifactId>jackson-core</artifactId>
+		   <version>${jackjson.version}</version>
+		</dependency>
+		<dependency>
+		   <groupId>com.fasterxml.jackson.core</groupId>
+		   <artifactId>jackson-annotations</artifactId>
+		   <version>${jackjson.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.jfree</groupId>
+		    <artifactId>jfreechart</artifactId>
+		    <version>${jfreechart.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>net.sourceforge.dynamicreports</groupId>
+		    <artifactId>dynamicreports-core</artifactId>
+		    <version>${dynamicreports.version}</version>
+		</dependency>
+		
+	</dependencies>
+  
+  <build>
+	<finalName>passingplugin</finalName>
+		<plugins>
+			<!-- maven插件配置 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.version}</version>
+				<configuration>
+					<skipMain>true</skipMain>
+					<skip>true</skip>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<!-- 产生javadoc文档 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${maven.javadoc.version}</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<phase>install</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<charset>UTF-8</charset>
+					<additionalparam>-Xdoclint:none</additionalparam>
+				</configuration>
+			</plugin>
+			<!-- end 产生javadoc文档 --> 
+		</plugins>
+	</build>
+	
+</project>
