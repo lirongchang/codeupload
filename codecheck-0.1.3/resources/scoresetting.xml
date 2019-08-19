@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<score>
+    <totalscore>100</totalscore>
+    <lengtherrornumber>5</lengtherrornumber>
+    <lengtherrorscore>5</lengtherrorscore>
+    <lengthwarningnumber>5</lengthwarningnumber>
+    <lengthwarningscore>5</lengthwarningscore>
+    <javadocerrornumber>5</javadocerrornumber>
+    <javadocerrorscore>5</javadocerrorscore>
+    <javadocwarningnumber>5</javadocwarningnumber>
+    <javadocwarningscore>5</javadocwarningscore>
+    <nameerrornumber>5</nameerrornumber>
+    <nameerrorscore>5</nameerrorscore>
+    <namewarningnumber>5</namewarningnumber>
+    <namewarningscore>5</namewarningscore>
+    <codeblockerrornumber>5</codeblockerrornumber>
+    <codeblockerrorscore>5</codeblockerrorscore>
+    <codeblockwarningnumber>5</codeblockwarningnumber>
+    <codeblockwarningscore>5</codeblockwarningscore>
+</score>

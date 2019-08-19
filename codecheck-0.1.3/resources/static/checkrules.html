@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+ <head> 
+  <meta charset="UTF-8"> 
+  <title>codecheck plugin check rules settings</title> 
+ </head> 
+ <body> 
+  <div id="allrules" style="width:100%; margin:0 auto; overflow:auto; _display:inline-block;border:3px solid #000 "> 
+   <div id="scoresettings">
+		<b>------------------------分数设置--------------------</b><br />
+		说明：分数的设置按分类进行扣分，不同错误类别和错误等级自定义所扣分值，扣完为止，允许存在负分
+		<br />
+		总分：<input id="totalscore" type="number" name="totalscore" value="100" min="20" max="100" required="true" style="width:5%;"/>
+		<br />
+		长度检查分数设置：
+		<br />
+		错误个数：<input id="lengtherrornumber" type="number" name="lengtherrornumber" value="5" min="1" max="100" required="true" style="width: 5%;"/>
+		所扣分数：<input id="lengtherrorscore" type="number" name="lengtherrorscore" value="5" min="1" max="100" required="true" style="width: 5%;"/>
+		警告个数：<input id="lengthwarningnumber" type="number" name="lengthwarningnumber" value="5" min="1" max="100" required="true" style="width: 5%;"/>
+		所扣分数：<input id="lengthwarningscore" type="number" name="lengthwarningscore" value="5" min="1" max="100" required="true" style="width: 5%;"/>
+		<br />
+		注释检查分数设置：
+		<br />
+		错误个数：<input id="javadocerrornumber" type="number" name="javadocerrornumber" value="5" min="1" max="100" required="true" style="width: 5%;"/>
+		所扣分数：<input id="javadocerrorscore" type="number" name="javadocerrorscore" value="5" min="1" max="100" required="true" style="width: 5%;"/>
+		警告个数：<input id="javadocwarningnumber" type="number" name="javadocwarningnumber" value="5" min="1" max="100" required="true" style="width: 5%;"/>
+		所扣分数：<input id="javadocwarningscore" type="number" name="javadocwarningscore" value="5" min="1" max="100" required="true" style="width: 5%;"/>
+		<br />
+		命名检查分数设置：
+		<br />
+		错误个数：<input id="nameerrornumber" type="number" name="nameerrornumber" value="5" min="1" max="100" required="true" style="width: 5%;"/>
+		所扣分数：<input id="nameerrorscore" type="number" name="nameerrorscore" value="5" min="1" max="100" required="true" style="width: 5%;"/>
+		警告个数：<input id="namewarningnumber" type="number" name="namewarningnumber" value="5" min="1" max="100" required="true" style="width: 5%;"/>
+		所扣分数：<input id="namewarningscore" type="number" name="namewarningscore" value="5" min="1" max="100" required="true" style="width: 5%;"/>
+		<br />
+		代码块检查分数设置：
+		<br />
+		错误个数：<input id="codeblockerrornumber" type="number" name="codeblockerrornumber" value="5" min="1" max="100" required="true" style="width: 5%;"/>
+		所扣分数：<input id="codeblockerrorscore" type="number" name="codeblockerrorscore" value="5" min="1" max="100" required="true" style="width: 5%;"/>
+		警告个数：<input id="codeblockwarningnumber" type="number" name="codeblockwarningnumber" value="5" min="1" max="100" required="true" style="width: 5%;"/>
+		所扣分数：<input id="codeblockwarningscore" type="number" name="codeblockwarningscore" value="5" min="1" max="100" required="true" style="width: 5%;"/>
+		<br />
+		<b>------------------------分数设置结束--------------</b>
+	</div>
+   <div id="leftrules" style="width:50%; float:left; background:#6F0;"> 
+    <div id="lengthchecksettings" style="border:3px solid #000"> 
+     <b>------------------------1.长度检查设置--------------</b> 
+     <br> 文件长度设置：
+     <input id="filelength" type="number" name="filelength" value="2000" min="100" max="10000" required="true" style="width: 10%;"> 错误级别设置：
+     <input id="filelengthlevel" list="errorlevel" name="filelengthlevel" value="error" required="true" style="width: 10%;"> 
+     <datalist id="errorlevel"> <option value="info"></option> <option value="warning"></option> <option value="error"></option> </datalist> 
+     <datalist id="forbidden"> <option value="true"></option> <option value="false"></option> </datalist> 
+     <br> 每行长度设置：
+     <input id="linelength" type="number" name="linelength" value="500" min="100" max="1000" required="true" style="width: 10%;"> 错误级别设置：
+     <input id="linelengthlevel" list="errorlevel" name="linelengthlevel" value="error" required="true" style="width: 10%;"> 
+     <br> 方法长度设置：
+     <input id="methodlength" type="number" name="methodlength" value="200" min="100" max="200" required="true" style="width: 10%;"> 错误级别设置：
+     <input id="methodlengthlevel" list="errorlevel" name="methodlengthlevel" value="error" required="true" style="width: 10%;"> 
+     <br> 方法参数个数：
+     <input id="methodparameternumber" type="number" name="methodparameternumber" value="20" min="0" max="20" required="true" style="width: 10%;"> 错误级别设置：
+     <input id="methodparameternumberlevel" list="errorlevel" name="methodparameternumberlevel" value="error" required="true" style="width: 10%;"> 
+     <br> 方法个数设置：
+     <input id="methodcount" type="number" name="methodcount" value="500" min="40" max="500" required="true" style="width: 10%;"> 错误级别设置：
+     <input id="methodcountlevel" list="errorlevel" name="methodcountlevel" value="error" required="true" style="width: 10%;"> 
+    </div> 
+    <br> 
+    <div id="namingchecksettings" style="border:3px solid #000"> 
+     <b>------------------------3.命名检查设置----------------</b> 
+     <br> 类的命名检查错误级别：
+     <input id="typenameclasslevel" list="errorlevel" name="typenameclasslevel" value="error" required="true" style="width: 10%;"> 
+     <br> 接口命名检查错误级别：
+     <input id="typenameinterfacelevel" list="errorlevel" name="typenameinterfacelevel" value="error" required="true" style="width: 10%;"> 
+     <br> 方法命名检查错误级别：
+     <input id="methodnamelevel" list="errorlevel" name="methodnamelevel" value="error" required="true" style="width: 10%;"> 
+     <br> 局部变量命名错误级别：
+     <input id="localvariablenamelevel" list="errorlevel" name="localvariablenamelevel" value="error" required="true" style="width: 10%;"> 
+     <br> 局部最终变量错误级别：
+     <input id="localfinalvariablenamelevel" list="errorlevel" name="localfinalvariablenamelevel" value="error" required="true" style="width: 10%;"> 
+     <br> 实例变量命名错误级别：
+     <input id="membernamelevel" list="errorlevel" name="membernamelevel" value="error" required="true" style="width: 10%;"> 
+     <br> 静态变量命名错误级别：
+     <input id="staticvariablenamelevel" list="errorlevel" name="staticvariablenamelevel" value="error" required="true" style="width: 10%;"> 
+     <br> 数组变量命名错误级别：
+     <input id="arraytypestylelevel" list="errorlevel" name="arraytypestylelevel" value="error" required="true" style="width: 10%;"> 
+     <br> 常量命名检查错误级别：
+     <input id="constantnamelevel" list="errorlevel" name="constantnamelevel" value="error" required="true" style="width: 10%;"> 
+     <br> 
+    </div> 
+   </div> 
+   <div id="rightrules" style="width:50%;float:right; background:#FC0"> 
+    <div id="noteschecksettings" style="border:3px solid #000"> 
+     <b>------------------------2.注释检查设置----------------</b> 
+     <br> 类的注释检查错误级别：
+     <input id="javadoctypeclasslevel" list="errorlevel" name="javadoctypeclasslevel" value="error" required="true" style="width: 10%;"> 
+     <!--javadoc标记无法识别时是否忽略错误：<input id="allowunknowntagsclass" list="forbidden" name="allowunknowntagsclass" value="true" required="true" style="width: 10%;"/>--> 
+     <br> 接口注释检查错误级别：
+     <input id="javadoctypeinterfacelevel" list="errorlevel" name="javadoctypeinterfacelevel" value="error" required="true" style="width: 10%;"> 
+     <!--javadoc标记无法识别时是否忽略错误：<input id="allowunknowntagsinterface" list="forbidden" name="allowunknowntagsinterface" value="true" required="true" style="width: 10%;"/>--> 
+     <br> 方法注释检查错误级别：
+     <input id="javadocmethodlevel" list="errorlevel" name="javadocmethodlevel" value="error" required="true" style="width: 10%;"> 
+     <br> 允许不声明运行时异常：
+     <input id="allowundeclaredRTE" list="forbidden" name="allowundeclaredRTE" value="true" required="true" style="width: 10%;"> 
+     <br> 允许getset方法无注释：
+     <input id="allowmissingpropertyjavadoc" list="forbidden" name="allowmissingpropertyjavadoc" value="true" required="true" style="width: 10%;"> 
+     <br> 公有变量注释检查错误级别：
+     <input id="javadocvariablepublic" list="errorlevel" name="javadocvariablepublic" value="error" required="true" style="width: 10%;"> 
+     <br> 保护变量注释检查错误级别：
+     <input id="javadocvariableprotected" list="errorlevel" name="javadocvariableprotected" value="error" required="true" style="width: 10%;"> 
+     <br> 私有变量注释检查错误级别：
+     <input id="javadocvariableprivate" list="errorlevel" name="javadocvariableprivate" value="error" required="true" style="width: 10%;"> 
+     <br> 
+    </div> 
+    <br> 
+    <div id="codeblockchecksettings" style="border:3px solid #000"> 
+     <b>------------------------4.代码块检查设置----------------</b> 
+     <br> 嵌套代码块错误级别：
+     <input id="avoidnestedblockslevel" list="errorlevel" name="avoidnestedblockslevel" value="error" required="true" style="width: 10%;"> 
+     <br> 空代码块的错误级别：
+     <input id="emptyblocklevel" list="errorlevel" name="emptyblocklevel" value="error" required="true" style="width: 10%;"> 
+     <br> 缺失大括号错误级别：
+     <input id="needbraceslevel" list="errorlevel" name="needbraceslevel" value="error" required="true" style="width: 10%;"> 
+     <br> 左大括号位置错误级别：
+     <input id="leftcurlylevel" list="errorlevel" name="leftcurlylevel" value="warning" required="true" style="width: 10%;"> 
+     <br> 右大括号位置单独一行错误级别：
+     <input id="rightcurlyalonelevel" list="errorlevel" name="rightcurlyalonelevel" value="warning" required="true" style="width: 10%;"> 
+     <br> 右大括号位置同一行错误级别：
+     <input id="rightcurlysamelevel" list="errorlevel" name="rightcurlylsameevel" value="warning" required="true" style="width: 10%;"> 
+     <br> 
+    </div> 
+   </div> 
+  </div>   
+ </body>
+</html>

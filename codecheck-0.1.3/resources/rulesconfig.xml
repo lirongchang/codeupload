@@ -1,0 +1,35 @@
+<RulesCheck>
+	<filelength>FileLength.max</filelength>
+	<filelengthlevel>FileLength.severity</filelengthlevel>
+	<linelength>LineLength.max</linelength>
+	<linelengthlevel>LineLength.severity</linelengthlevel>
+	<methodlength>MethodLength.max</methodlength>
+	<methodlengthlevel>MethodLength.severity</methodlengthlevel>
+	<methodparameternumber>ParameterNumber.max</methodparameternumber>
+	<methodparameternumberlevel>ParameterNumber.severity</methodparameternumberlevel>
+	<methodcount>MethodCount.maxTotal</methodcount>
+	<methodcountlevel>MethodCount.severity</methodcountlevel>
+	<typenameclasslevel>TypeName.tokens.CLASS_DEF.severity</typenameclasslevel>
+	<typenameinterfacelevel>TypeName.tokens.INTERFACE_DEF.severity</typenameinterfacelevel>
+	<methodnamelevel>MethodName.severity</methodnamelevel>
+	<localvariablenamelevel>LocalVariableName.severity</localvariablenamelevel>
+	<localfinalvariablenamelevel>LocalFinalVariableName.severity</localfinalvariablenamelevel>
+	<membernamelevel>MemberName.severity</membernamelevel>
+	<staticvariablenamelevel>StaticVariableName.severity</staticvariablenamelevel>
+	<arraytypestylelevel>ArrayTypeStyle.severity</arraytypestylelevel>
+	<constantnamelevel>ConstantName.severity</constantnamelevel>
+	<javadoctypeclasslevel>JavadocType.tokens.CLASS_DEF.severity</javadoctypeclasslevel>
+	<javadoctypeinterfacelevel>JavadocType.tokens.INTERFACE_DEF.severity</javadoctypeinterfacelevel>
+	<javadocmethodlevel>JavadocMethod.severity</javadocmethodlevel>
+	<allowundeclaredRTE>JavadocMethod.allowUndeclaredRTE</allowundeclaredRTE>
+	<allowmissingpropertyjavadoc>JavadocMethod.allowMissingPropertyJavadoc</allowmissingpropertyjavadoc>
+	<javadocvariablepublic>JavadocVariable.scope.public.severity</javadocvariablepublic>
+	<javadocvariableprotected>JavadocVariable.scope.protected.severity</javadocvariableprotected>
+	<javadocvariableprivate>JavadocVariable.scope.private.severity</javadocvariableprivate>
+	<avoidnestedblockslevel>AvoidNestedBlocks.severity</avoidnestedblockslevel>
+	<emptyblocklevel>EmptyBlock.severity</emptyblocklevel>
+	<needbraceslevel>NeedBraces.severity</needbraceslevel>
+	<leftcurlylevel>LeftCurly.severity</leftcurlylevel>
+	<rightcurlyalonelevel>RightCurly.option.alone.severity</rightcurlyalonelevel>
+	<rightcurlysamelevel>RightCurly.id.RightCurlySame.severity</rightcurlysamelevel>
+</RulesCheck>

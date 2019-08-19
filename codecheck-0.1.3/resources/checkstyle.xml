@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN" "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<module name="Checker">
+
+	<!-- 1.长度检查 -->
+        <!-- （1）文件长度不超过规定的行数，默认值为1500行，默认错误级别为error -->
+        <module name="FileLength">
+            <property name="max" value="1000"/>
+            <property name="severity" value="warning"/>
+            <message key="maxLen.file" value="长度检查：文件长度超过设置的最大值。文件 {0,number,integer} 行 （最多：{1,number,integer} 行）。"/>
+        </module>
+    <module name="TreeWalker">
+        
+        <!-- （2）每行不超过指定的字符数，默认值为140个，默认错误级别为error -->
+        <module name="LineLength">
+            <property name="max" value="1000"/>
+            <property name="severity" value="warning"/>
+            <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>
+            <message key="maxLineLen" value="长度检查：每行字符数超过设置的最大值。本行字符数 {1,number,integer}个，最多：{0,number,integer}个。"/>
+        </module>
+        <!-- （3）方法不超过指定的行数，默认值为50行，默认错误级别为error -->
+        <module name="MethodLength">
+            <property name="tokens" value="METHOD_DEF"/>
+            <property name="severity" value="warning"/>
+            <property name="max" value="500"/>
+            <message key="maxLen.method" value="长度检查：方法长度超过设置的最大值。方法 {0,number,integer} 行（最多： {1,number,integer} 行）。"/>
+        </module>
+        <!-- （4）方法的参数个数不超过指定的个数，默认值为5个， 并且不对构造方法进行检查，默认错误级别为error-->
+        <module name="ParameterNumber">
+            <property name="max" value="30"/>
+            <property name="severity" value="warning"/>
+            <property name="ignoreOverriddenMethods" value="true"/>
+            <property name="tokens" value="METHOD_DEF"/>
+            <message key="maxParam" value="长度检查：参数个数超过设置的最大值。参数共： {1,number,integer}个，最多：{0,number,integer}个。"/>
+        </module>
+        <!-- （5）方法个数，默认值为100个，默认错误级别为error -->
+        <module name="MethodCount">
+            <property name="maxTotal" value="200"/>
+            <property name="severity" value="warning"/>
+            <message key="too.many.methods" value="长度检查：方法个数超过设置的最大值。方法总数： {0,number,integer} （最多： {1,number,integer}）。"/>
+        </module>
+        <!-- 长度检查结束 -->
+        <!-- 2.注释检查 -->
+        <!--（1）对类的javadoc注释进行检查，默认错误级别为error，默认允许（当javadoc标记无法识别时是否忽略错误）。-->
+        <module name="JavadocType">
+            <property name="severity" value="warning"/>
+            <property name="allowUnknownTags" value="true"/>
+            <property name="tokens" value="CLASS_DEF"/>
+            <message key="javadoc.missing" value="注释检查：类注释，缺少Javadoc注释。"/>
+            <message key="type.missingTag" value="注释检查：类注释，Javadoc 类型的注释丢失 {0} 标签。"/>
+            <message key="javadoc.unusedTagGeneral" value="注释检查：类注释，未使用过的 Javadoc 标签。"/>
+            <message key="javadoc.unusedTag" value="注释检查：类注释，未使用过的 {0} 标签for ''{1}''。"/>
+            <message key="type.tagFormat" value="注释检查：类注释，Javadoc 类型标签 {0}必须匹配模式 ''{1}''。"/>
+        </module>
+        <!--（2）对接口的javadoc注释进行检查，默认错误级别为error，默认允许（当javadoc标记无法识别时是否忽略错误）。-->
+        <module name="JavadocType">
+            <property name="severity" value="warning"/>
+            <property name="allowUnknownTags" value="true"/>
+            <property name="tokens" value="INTERFACE_DEF"/>
+            <message key="javadoc.missing" value="注释检查：接口注释，缺少Javadoc注释。"/>
+            <message key="type.missingTag" value="注释检查：接口注释，Javadoc 类型的注释丢失 {0} 标签。"/>
+            <message key="javadoc.unusedTagGeneral" value="注释检查：接口注释，未使用过的 Javadoc 标签。"/>
+            <message key="javadoc.unusedTag" value="注释检查：接口注释，未使用过的 {0} 标签for ''{1}''。"/>
+            <message key="type.tagFormat" value="注释检查：接口注释，Javadoc 类型标签 {0}必须匹配模式 ''{1}''。"/>
+        </module>
+        <!--（3）检查所有方法的javadoc，错误级别默认为error，可以不声明RuntimeException -->
+        <module name="JavadocMethod">
+            <property name="severity" value="warning"/>
+            <property name="allowUndeclaredRTE" value="false"/>
+            <property name="tokens" value="METHOD_DEF"/>
+            <!--允许get set 方法没有注释-->
+            <property name="allowMissingPropertyJavadoc" value="false"/>
+            <message key="javadoc.missing" value="注释检查：方法注释，缺少Javadoc注释。"/>
+        </module>
+        <!--（4）public变量的注释进行检查，默认错误级别为warning-->
+        <module name="JavadocVariable">
+            <property name="severity" value="warning"/>
+            <property name="scope" value="public"/>
+            <message key="javadoc.missing" value="注释检查：public变量注释，缺少Javadoc注释。"/>
+        </module>
+        <!--（5）protect变量的注释进行检查，默认错误级别为warning -->
+        <module name="JavadocVariable">
+            <property name="severity" value="warning"/>
+            <property name="scope" value="protected"/>
+            <message key="javadoc.missing" value="注释检查：protected变量注释：缺少Javadoc注释。"/>
+        </module>
+        <!--（6）private变量的注释进行检查，默认错误级别为warning -->
+        <module name="JavadocVariable">
+            <property name="severity" value="warning"/>
+            <property name="scope" value="private"/>
+            <message key="javadoc.missing" value="注释检查：private变量注释：缺少Javadoc注释。"/>
+        </module>
+        <!-- 注释检查结束 -->
+        <!-- 3.命名检查 -->
+        <!-- （1）类的命名,匹配规则默认:(^[A-Z][a-zA-Z0-9]*$),必须以大写字母开始 ，默认错误级别为error-->
+        <module name="TypeName">
+            <property name="tokens" value="CLASS_DEF"/>
+            <property name="format" value="^[A-Z][a-zA-Z0-9]*$"/>
+            <property name="severity" value="warning"/>
+            <message key="name.invalidPattern" value="命名检查：类命名检查，名称 ''{0}'' 必须匹配表达式： ''{1}'' 。"/>
+        </module>
+        <!-- （2）接口命名,匹配规则默认:(^[A-Z][a-zA-Z0-9]*$),必须以大写字母开始 ，默认错误级别为error-->
+        <module name="TypeName">
+            <property name="tokens" value="INTERFACE_DEF"/>
+            <property name="severity" value="warning"/>
+            <property name="format" value="^[A-Z][a-zA-Z0-9]*$"/>
+            <message key="name.invalidPattern" value="命名检查：接口命名检查，名称 ''{0}'' 必须匹配表达式： ''{1}'' 。"/>
+        </module>
+        <!-- （3）方法名命名，默认错误级别为error -->
+        <module name="MethodName">
+            <property name="severity" value="warning"/>
+            <property name="format" value="(^[a-z][a-zA-Z0-9]*$)"/>
+            <message key="name.invalidPattern" value="命名检查：方法命名检查，名称 ''{0}'' 必须匹配表达式： ''{1}'' 。"/>
+        </module>
+        <!-- （4）局部变量命名，默认错误级别为error -->
+        <module name="LocalVariableName">
+            <property name="format" value="(^[a-z][a-zA-Z0-9]*$)"/>
+            <property name="severity" value="warning"/>
+            <message key="name.invalidPattern" value="命名检查：局部变量命名检查，名称 ''{0}'' 必须匹配表达式： ''{1}'' 。"/>
+        </module>
+        <!-- （5）局部的final变量，包括catch中的参数的检查，默认错误级别为error -->
+        <module name="LocalFinalVariableName">
+            <property name="severity" value="warning"/>
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+            <message key="name.invalidPattern" value="命名检查：局部final变量命名检查，名称 ''{0}'' 必须匹配表达式： ''{1}'' 。"/>
+        </module>
+        <!-- （6）实例变量命名，默认错误级别为error -->
+        <module name="MemberName">
+            <property name="format" value="^[a-z][a-z0-9][a-zA-Z0-9]*$"/>
+            <property name="severity" value="warning"/>
+            <message key="name.invalidPattern" value="命名检查：成员变量命名检查，名称 ''{0}'' 必须匹配表达式： ''{1}'' 。"/>
+        </module>
+        <!-- （7）静态变量命名，默认错误级别为error -->
+        <module name="StaticVariableName">
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+            <property name="severity" value="warning"/>
+            <message key="name.invalidPattern" value="命名检查：静态变量命名检查，名称 ''{0}'' 必须匹配表达式： ''{1}'' 。"/>
+        </module>
+        <!-- （8）数组变量命名，默认错误级别为error -->
+        <module name="ArrayTypeStyle">
+            <property name="severity" value="warning"/>
+            <message key="array.type.style" value="命名检查：数组命名检查，数组大括号位置错误。"/>
+        </module>
+        <!-- （9）常量命名，默认错误级别为error-->
+        <module name="ConstantName">
+            <property name="severity" value="warning"/>
+            <property name="format" value="^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"/>
+            <message key="name.invalidPattern" value="命名检查：常量命名检查，常量 ''{0}'' ，名称 ''{0}'' 必须匹配表达式： ''{1}'' 。"/>
+        </module>
+        <!-- 命名检查结束 -->
+        <!-- 4.代码块检查 -->
+        <!-- （1）检查是否有嵌套代码块，默认允许在switch中进行嵌套，默认错误级别为error -->
+        <module name="AvoidNestedBlocks">
+            <property name="severity" value="warning"/>
+            <property name="allowInSwitchCase" value="true"/>
+            <message key="block.nested" value="代码块检查：大括号嵌套检查，除了switch中的case语句允许嵌套，其他的不允许进行大括号嵌套。"/>
+        </module>
+        <!-- （2）检查是否有空代码块，只允许try代码块中出现文本，默认错误级别为error -->
+        <module name="EmptyBlock">
+            <property name="severity" value="warning"/>
+            <property name="option" value="text"/>
+            <property name="tokens" value="LITERAL_TRY"/>
+            <message key="block.empty" value="代码块检查：空代码块检查，发现空代码块。空 {0} 块。"/>
+            <message key="block.noStatement" value="代码块检查：块中应至少有一条代码语句。"/>
+        </module>
+        <!-- （3）检查左大括号位置  左侧大括号必须放在前一行代码的行尾，默认的错误级别为warning-->
+        <module name="LeftCurly">
+            <property name="severity" value="error"/>
+            <message key="line.previous" value="代码块检查：左括号位置检查，第 {1} 个字符 ''{0}'' 应位于前一行。"/>
+        </module>
+        <!-- （4）检查代码块是否缺失大括号，默认的错误级别为error-->
+        <module name="NeedBraces">
+            <property name="severity" value="warning"/>
+            <message key="needBraces" value="代码块检查：需要括号检查，''{0}'' 结构必须使用大括号 '''{}'''。"/>
+        </module>
+        <!-- （5）检查代码块的右大括号，默认的错误级别为warning-->
+        <module name="RightCurly">
+            <property name="option" value="same"/>
+            <property name="severity" value="error"/>
+            <property name="tokens" value="LITERAL_TRY, LITERAL_CATCH, LITERAL_FINALLY, LITERAL_IF, LITERAL_ELSE,LITERAL_DO"/>
+            <message key="line.same" value="代码块检查：右大括号位置检查，第 {1} 个字符 ''{0}''应该与当前多代码块的下一部分 \（if/else-if/else, do/while 或 try/catch/finally）位于同一行。"/>
+        </module>
+        <!-- （6）检查代码块的右大括号，默认的错误级别为warning-->
+        <module name="RightCurly">
+            <property name="option" value="alone"/>
+            <property name="severity" value="error"/>
+            <property name="tokens" value="CLASS_DEF, METHOD_DEF,LITERAL_FOR, LITERAL_WHILE, STATIC_INIT,INSTANCE_INIT"/>
+            <message key="line.alone" value="代码块检查：右大括号位置检查，第 {1} 个字符 ''{0}'' 应独占一行。"/>
+        </module>
+        <!-- 代码块检查结束 -->
+    </module>
+    <!-- 高级检查 按模块进行-->
+</module>
