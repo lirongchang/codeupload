@@ -8,5 +8,10 @@ int main()
  //第二次在线编辑提交helloworld.c文件，是在有上网策略限制的前提下
  printf("在线编辑提交helloworld.c文件，是在有上网策略限制的前提下进行的\n");
  printf("在线编辑提交helloworld.c文件---------------");
+ 
+ //网桥模式下在线编辑测试，无策略拒绝时进行
+ int a,b,c,d,e,f,g,h,i;
+ 
+ printf("a+b+c+d+e+f:",%d);
  return 0;
 }
