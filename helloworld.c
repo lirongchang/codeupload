@@ -11,7 +11,8 @@ int main()
  
  //网桥模式下在线编辑测试，无策略拒绝时进行
  int a,b,c,d,e,f,g,h,i;
- 
+ char ch1,ch2,ch3,ch4;
+ printf("%c",ch1+ch2+ch3+ch4);
  printf("a+b+c+d+e+f:",%d);
  return 0;
 }
