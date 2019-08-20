@@ -11,4 +11,9 @@ public class Util {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return user;
     }
+    //设置当前用户
+    public static User setCurrentUser(User user) {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return user;
+    }
 }
