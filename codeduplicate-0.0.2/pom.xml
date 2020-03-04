@@ -28,7 +28,7 @@
 		<jsoup.version>1.11.2</jsoup.version>
 		<!-- json版本 -->
 		<json.version>20180130</json.version>
-		<jackjson.version>2.9.8</jackjson.version>
+		<jackjson.version>2.10.3</jackjson.version>
 		<jdom.version>1.0</jdom.version>
 		<commons.beanutils.version>1.9.3</commons.beanutils.version>
 		<!-- jfreechart -->
